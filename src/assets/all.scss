@@ -1,0 +1,28 @@
+// src/assets/all.scss
+
+// 【步驟 A】先引入 Bootstrap 必要的工具函式 (否則會報 Undefined mixin 錯誤)
+@import "bootstrap/scss/functions";
+
+// 【步驟 B】引入你的自定義變數檔 (這裡放你從 GitHub 下載或修改的 _variables.scss)
+// 這樣你的變數才會在 Bootstrap 產生 CSS 之前先生效
+@import "./variables"; 
+
+// 【步驟 C】最後才引入 Bootstrap 完整的程式碼
+@import "bootstrap/scss/bootstrap";
+
+/* 讓群組內的每個按鈕都強制套用圓角 */
+.btn-group-pill .btn {
+  border-radius: 5px !important; /* 強制覆蓋 Bootstrap 的 0 圓角設定 */
+  margin-left: 5px;               /* 讓按鈕之間有一點點縫隙，弧度才看得出來 */
+  margin-right: 5px;
+}
+
+/* 移除 Bootstrap 預設對第一個按鈕以外的負邊距補償 */
+.btn-group-pill > .btn:not(:first-child) {
+  margin-left: 5px; 
+}
+
+/* 隱藏按鈕之間重疊的邊框線 */
+.btn-group-pill {
+  gap: 8px; /* 使用 gap 來控制間距 (Vite 專案通常支援) */
+}
