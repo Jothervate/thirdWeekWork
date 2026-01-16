@@ -564,7 +564,7 @@ function App(){
             if (res.data.success) {
                 // 提醒：請確認該 API 是否有回傳 uid，部分版本是在 res.data.uid
                 alert(`驗證成功！你的 UID 為：${res.data.uid || '已取得驗證'}`);
-                console.log("完整驗證資訊：", res.data);
+                // console.log("完整驗證資訊：", res.data);
                 setIsAuth(true); // 確保狀態同步
             }
         } catch (err) {
